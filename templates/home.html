@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row align-items-center min-vh-75 py-5">
+    <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="display-3 fw-bold mb-4">Your Perfect <br><span class="text-success">Music Mix</span></h1>
+        <p class="lead text-muted mb-5">
+            Soundwave uses an advanced hybrid recommendation engine to learn your unique taste. We combine content-based features and collaborative filtering to find the exact tracks you'll love.
+        </p>
+        <div class="d-grid gap-3 d-sm-flex">
+            <a href="/discover" class="btn btn-success btn-lg px-5 py-3 rounded-pill fw-semibold shadow-sm">
+                <i class="bi bi-magic me-2"></i>Start Discovering
+            </a>
+            <a href="#how-it-works" class="btn btn-outline-secondary btn-lg px-5 py-3 rounded-pill fw-semibold">
+                How it works
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-6 text-center">
+        <!-- We use an inline SVG as a placeholder for a nice hero graphic -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="auto" class="img-fluid rounded-4 shadow-lg bg-light p-4">
+            <rect width="100%" height="100%" fill="#f8f9fa" />
+            <path d="M50 200 Q 150 100 250 200 T 450 200" fill="none" stroke="#008751" stroke-width="8" stroke-linecap="round" />
+            <path d="M50 220 Q 150 120 250 220 T 450 220" fill="none" stroke="#198754" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+            <path d="M50 240 Q 150 140 250 240 T 450 240" fill="none" stroke="#20c997" stroke-width="2" stroke-linecap="round" opacity="0.3" />
+            <circle cx="150" cy="150" r="15" fill="#008751" />
+            <circle cx="250" cy="200" r="12" fill="#198754" />
+            <circle cx="350" cy="250" r="20" fill="#20c997" />
+        </svg>
+    </div>
+</div>
+
+<div class="row my-5 pt-5" id="how-it-works">
+    <div class="col-12 text-center mb-5">
+        <h2 class="fw-bold">Powered by Hybrid AI</h2>
+        <p class="text-muted">We combine two powerful algorithms to bring you the best results.</p>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4">
+            <div class="card-body text-center">
+                <div class="mb-3 text-success">
+                    <i class="bi bi-music-player display-4"></i>
+                </div>
+                <h4 class="card-title fw-bold">Content-Based</h4>
+                <p class="card-text text-muted">We analyze the audio features (tempo, energy, danceability) of your favorite genres to find similar sounding tracks.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4">
+            <div class="card-body text-center">
+                <div class="mb-3 text-success">
+                    <i class="bi bi-people display-4"></i>
+                </div>
+                <h4 class="card-title fw-bold">Collaborative Filtering</h4>
+                <p class="card-text text-muted">We learn from community ratings. If users with similar tastes loved a song, we'll recommend it to you.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

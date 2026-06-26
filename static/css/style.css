@@ -1,0 +1,97 @@
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.soundwave-nav {
+    background: linear-gradient(135deg, #008751 0%, #004d2e 100%); /* Nigerian Green */
+}
+
+/* Custom Checkbox as Chips */
+.genre-chip {
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-success {
+    color: #008751;
+    border-color: #008751;
+}
+
+.btn-outline-success:hover,
+.btn-check:checked + .btn-outline-success {
+    background-color: #008751;
+    border-color: #008751;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 135, 81, 0.2);
+}
+
+.btn-success {
+    background-color: #008751;
+    border-color: #008751;
+}
+
+.btn-success:hover {
+    background-color: #00663d;
+    border-color: #00663d;
+}
+
+.btn-success:disabled {
+    background-color: #79c5a3;
+    border-color: #79c5a3;
+}
+
+/* Result Card */
+.track-card {
+    transition: transform 0.2s;
+    border-radius: 12px;
+}
+
+.track-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+.genre-badge {
+    background-color: #e9ecef;
+    color: #495057;
+    font-size: 0.75rem;
+    padding: 0.25em 0.6em;
+    border-radius: 10px;
+}
+
+.progress {
+    height: 6px;
+    border-radius: 3px;
+}
+
+.progress-bar.bg-success {
+    background-color: #008751 !important;
+}
+
+.star-rating i {
+    cursor: pointer;
+    color: #dee2e6;
+    transition: color 0.15s ease-in-out;
+}
+
+.star-rating i.active,
+.star-rating i:hover,
+.star-rating i:hover ~ i {
+    color: #ffc107;
+}
+
+/* We reverse direction for hover to work correctly with CSS sibling selectors */
+.star-rating {
+    direction: rtl;
+    display: inline-block;
+}
+
+.star-rating i:hover,
+.star-rating i:hover ~ i {
+    color: #ffc107;
+}

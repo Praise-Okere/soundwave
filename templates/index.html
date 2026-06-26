@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Discover Your Sound</h1>
+            <p class="lead text-muted">Select your favorite genres to get personalized Nigerian music recommendations.</p>
+        </div>
+        
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-body p-4">
+                <h5 class="card-title mb-4">Select Genres</h5>
+                <form id="genreForm">
+                    <div class="d-flex flex-wrap gap-2 mb-4" id="genreContainer">
+                        <!-- Genres will be populated here -->
+                        {% set genres = ['afrobeats', 'highlife', 'fuji', 'amapiano', 'afropop', 'hip-hop', 'r&b', 'gospel', 'alte'] %}
+                        {% for genre in genres %}
+                        <input type="checkbox" class="btn-check genre-checkbox" id="genre_{{ genre }}" value="{{ genre }}" autocomplete="off">
+                        <label class="btn btn-outline-success genre-chip" for="genre_{{ genre }}">{{ genre | capitalize }}</label>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success btn-lg" id="recommendBtn" disabled>
+                            <i class="bi bi-magic me-2"></i>Get Recommendations
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Loading Spinner -->
+        <div class="text-center d-none my-5" id="loadingSpinner">
+            <div class="spinner-border text-success" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2 text-muted">Curating your mix...</p>
+        </div>
+        
+        <!-- Results Section -->
+        <div id="resultsSection" class="d-none">
+            <h3 class="mb-4">Your Soundwave Recommendations</h3>
+            <div id="resultsContainer"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+{% endblock %}
