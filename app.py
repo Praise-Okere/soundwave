@@ -10,7 +10,8 @@ from models.cf_model import generate_synthetic_interactions, train_svd
 from models.hybrid import hybrid_recommend
 
 app = Flask(__name__)
-DB_FILE = "soundwave.db"
+# Vercel has a read-only filesystem, so we use /tmp for the SQLite DB when deployed
+DB_FILE = "/tmp/soundwave.db" if os.environ.get("VERCEL") else "soundwave.db"
 DATA_FILE = "data/spotify_tracks_clean.csv"
 
 # Globals for models
